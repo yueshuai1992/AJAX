@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		#nav li{
+			width:200px;
+			height: 60px;
+			border:1px solid red;
+			float:left;
+			list-style: none;
+			font-size: 25px;
+			text-align: center;
+			line-height: 60px;
+
+		}
+		.box{
+			clear:both;
+			width:600px;
+			height: 600px;
+			border: 1px solid blue;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<ul id="nav">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+	</ul>
+	<div class="box">
+
+	</div>
+	<script src="js/jquery-1.11.1.js"></script>
+	<script>
+		$("#nav li").click(function(){
+			var url ="";
+			var index = $(this).index();
+			switch(index){
+				case 0:url = "/fruit";break;
+				case 1:url = "../pages/moves.html";break;
+				case 2:url = "../pages/computer.html";break;
+			}
+			$(".box").load(url);
+		})
+	</script>
+</body>
+</html>

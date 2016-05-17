@@ -1,0 +1,47 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    title Document
+    style.
+      *{
+      margin:0;
+      padding: 0;
+      }
+      #chattext{
+      width:350px;
+      height: 153px;
+      border: 1px solid ;
+      float:left;
+      }
+      #chatselect{
+      width:200px;
+      height: 155px;
+      border: 1px solid;
+      }
+      #intext{
+      width:350px;
+      height: 30px;
+      }
+      #submit{
+      width:190px;
+      height: 30px;
+      }
+  body
+    form(action='/submit', method='post')
+      div
+        textarea#chattext(name='chattext', cols='60', rows='10') #{text[0].马福云}
+        select#chatselect(multiple='', name='chatselect')
+          option --当前用户--
+          option 马福云
+          option 岳帅
+          option 男宝宝
+          option 女宝宝
+        br
+        input#intext(type='text', name='message')
+        input#submit(type='submit', value='提交聊天！')
+    script(type='text/javascript', src='js/jquery-1.11.1.js')
+    script.
+      $(".submit").click(function(){
+
+      })

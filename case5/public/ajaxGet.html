@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input class="but" type="button" value ="获取数据！">
+	<script src="js/jquery-1.11.1.js"></script>
+	<script>
+		$(".but").click(function(){
+			$.get("/ajaxget",function(data){
+				alert(data)
+			})
+		})
+	</script>
+</body>
+</html>

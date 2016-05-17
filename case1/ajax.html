@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form name="myForm" action="">
+		<span>用户名</span><input type="text" name = "username" onkeyup="ajaxFunction();" >
+		<span>密码</span><input type="password" name="password">
+		<input type="submit" >
+	</form>
+	<script>
+		function ajaxFunction()
+		 {
+		 var xmlHttp;
+
+		 try
+		    {
+		   // Firefox, Opera 8.0+, Safari
+		    xmlHttp=new XMLHttpRequest();
+		    }
+		 catch (e)
+		    {
+
+		  // Internet Explorer
+		   try
+		      {
+		      xmlHttp=new ActiveXObject("Msxml2.XMLHTTP");
+		      }
+		   catch (e)
+		      {
+
+		      try
+		         {
+		         xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
+		         }
+		      catch (e)
+		         {
+		         alert("您的浏览器不支持AJAX！");
+		         return false;
+		         }
+		      }
+		    }
+		    xmlHttp.onreadystatechange=function()
+		  {
+		  if(xmlHttp.readyState==4)
+		    {
+		    document.myForm.time.value=xmlHttp.responseText;
+		    }
+		  }
+		   xmlHttp.open("GET","time.asp",true);
+    		xmlHttp.send(null);
+		 }
+
+
+	</script>
+</body>
+</html>

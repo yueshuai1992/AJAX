@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input id= "btn" type="button"  value="get获取数据岳帅！">
+	<script src="jquery-1.11.1.js"></script>
+	<script>
+		$("#btn").click(function(){
+			$.ajax({
+				url:"http://192.168.1.173:8080/jsonp",
+				type:"get",
+				dataType:"jsonp",
+				success:function(data){
+					for(var i in data){
+						alert(data[i])
+					}
+
+				}
+			})
+		})
+
+	</script>
+</body>
+</html>

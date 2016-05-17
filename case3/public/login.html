@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>username</title>
+</head>
+<body>
+	<input type="text" placeholder="请输入用户名" name="username" class="user">
+	<input type="button" value="提交" class="btn">
+	<script src= "js/jquery-1.11.1.js"></script>
+	<script>
+		$(".user").blur(function(){
+			var str = $(".user").val();
+			$.get("/login",{username:str},function(data){
+				alert(data);
+			})
+		});
+		$(".btn").click(function(){
+			alert("haha");
+		});
+	</script>
+</body>
+</html>
